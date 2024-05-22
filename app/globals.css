@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .primary-btn {
+        @apply w-full bg-sky-900 text-white font-medium rounded-xl text-center hover:bg-sky-800 transition-colors disabled:bg-neutral-400 disabled:text-neutral-300 disabled:cursor-not-allowed;
+    }
+}
