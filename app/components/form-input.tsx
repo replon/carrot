@@ -3,7 +3,7 @@ interface FormInputProps {
   type: string
   placeholder: string
   required: boolean
-  errors: string[]
+  errors: any
 }
 
 const iconPath: Record<string, JSX.Element> = {
@@ -17,7 +17,7 @@ export default function FormInput({
   type,
   placeholder,
   required,
-  errors
+  errors = []
 }: FormInputProps) {
   return (
     <div className='flex flex-col gap-2'>
@@ -34,8 +34,8 @@ export default function FormInput({
         </svg>
 
       </div>
-      {errors.map((error, index) => (
-        <span key={index} className='text-red-500 font-medium'>
+      {errors.map((error: any, index: number) => (
+        <span key={index} className='text-red-500 font-medium text-xs'>
           {error}
         </span>
       ))}

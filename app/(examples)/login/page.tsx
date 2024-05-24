@@ -13,14 +13,16 @@ export default function Login() {
       <div className='flex items-center justify-center p-5 rounded-2xl w-full max-w-lg bg-white'>
         <form action={trigger} className='flex flex-col gap-2 w-1/2'>
           <div className='text-xl font-bold text-center mb-5 font-sans'>Hello</div>
-          <FormInput name='email' type='email' placeholder='Email' required errors={[]} />
-          <FormInput name='username' type='username' placeholder='Username' required errors={[]} />
+          <FormInput name='email' type='email' placeholder='Email'
+            required errors={state?.errors?.fieldErrors.email} />
+          <FormInput name='username' type='username' placeholder='Username'
+            required errors={state?.errors?.fieldErrors.username} />
           <FormInput
             name='password'
             type='password'
             placeholder='Password'
             required
-            errors={state?.errors ?? []}
+            errors={state?.errors?.fieldErrors.password}
           />
           <FormButton text='Login' />
           {state?.ok ?
